@@ -17,11 +17,6 @@ public class Select3x3Board extends AppCompatActivity {
         gameBoard = intent != null ? intent.getString("board") : null;
     }
 
-    public void changeBoard(View view) {
-    }
-
-    public void changeMode(View view) {
-    }
 
     public void resetGame(View view) {
     }

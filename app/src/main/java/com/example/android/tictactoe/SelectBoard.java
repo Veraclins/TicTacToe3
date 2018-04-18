@@ -41,6 +41,8 @@ public class SelectBoard extends AppCompatActivity {
 
 
     }
+
+
     public void select3by3Board (View view){
         setContentView(R.layout.activity_select_board);
         gameBoard = 3;

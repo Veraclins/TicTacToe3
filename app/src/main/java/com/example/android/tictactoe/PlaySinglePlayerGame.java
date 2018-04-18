@@ -55,7 +55,7 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Get the Intent that started this activity and extract the string
+        // Get the Intent that started this activity and extract the data passed to it
         Bundle intent = getIntent().getExtras();
         boardSize = 3;
         playerMarker = intent != null ? intent.getString("marker") : null;
@@ -96,7 +96,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         });
         changeTurn();
     }
-
+    /**
+     * Watches for button clicks and execute player game
+     */
     @Override
     public void onClick(View view) {
         if (!((Button) view).getText().toString().equals("")) {
@@ -110,12 +112,14 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         }
         finishMove();
     }
-    /**
-    * This was implemented using my understanding of the strategies of the game.
-    * It is therefore not unbeatable.
-    * My desire is to have the computer make moves based on on certain conditions and this, it does to a certain level.
-    * I chose not to use any of the more refined algorithms so I can figure out a solution of my own
-    * */
+     /**
+     * This was implemented using my understanding of the strategies of the game.
+     * It is therefore not unbeatable.
+     * My desire is to have the computer make moves based on on certain conditions and this, it does to a certain level.
+     * I chose not to use any of the more refined algorithms so I can figure out a solution of my own
+     *
+     * Plays the computer turn and update the UI as appropriate
+     */
     private void compMove ()  {
         if(playerTurn) return;
             String[][] cell = new String[3][3];
@@ -423,6 +427,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
 
     }
 
+    /**
+     * Completes every move for human and computer play
+     */
     private void finishMove() {
         if (checkForWinner()) {
             if (playerTurn) {
@@ -439,6 +446,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         changeTurn();
     }
 
+    /**
+     * Changes the turn between human and computer play
+     */
     private void changeTurn() {
         String playerMove;
         if (playerTurn){
@@ -452,7 +462,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
 
     }
 
-
+    /**
+     * Checks if there is a winner from the latest move
+     */
     private boolean checkForWinner() {
 
         if (boardSize == 3) {
@@ -526,6 +538,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         }
     }
 
+    /**
+     * Shows that the Player has won and update the UI as appropriate
+     */
     private void playerWins () {
         playerPoints++;
         LayoutInflater inflater = getLayoutInflater();
@@ -548,6 +563,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         resetBoard();
     }
 
+    /**
+     * Shows that the Computer has won and update the UI as appropriate
+     */
     private void compWins () {
         compPoints++;
         LayoutInflater inflater = getLayoutInflater();
@@ -567,6 +585,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         resetBoard();
     }
 
+    /**
+     * Shows that the game has ended in a draw
+     */
     private void draw () {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.my_toast,
@@ -584,11 +605,17 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         resetBoard();
     }
 
+    /**
+     * Updates the UI with the points for eah player
+     */
     private void updatePointsText () {
         textViewplayerPoints.setText(String.valueOf(playerPoints));
         textViewcompPoints.setText(String.valueOf(compPoints));
     }
 
+    /**
+     * Clears the board and make it ready for another round of game
+     */
     private void resetBoard () {
             for (int i = 0; i < boardSize; i++) {
                 for (int j = 0; j < boardSize; j++) {
@@ -600,6 +627,9 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
         playerTurn = true;
     }
 
+    /**
+     * Clears the board and make it ready for another round of game and also clear the points by players
+     */
     private void resetGame () {
         playerPoints = 0;
         compPoints = 0;

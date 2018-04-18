@@ -20,7 +20,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,10 +32,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    /**
+     * Creates an intent that calls the SelectMarker class and pass the mode if
+     * the user select single player mode
+     */
     public void selectSinglePlayer(View view) {
         gameMode = 1;
-        //   Create an intent that calls the activity class and pass the gameBoard selected by user
+
         Intent intent = new Intent(this, SelectMarker.class);
         int mode = gameMode;
         intent.putExtra("mode", String.valueOf(mode));
@@ -44,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
+    /**
+     * Creates an intent that calls the SelectMarker class and pass the mode if
+     * the user select Two player mode
+     */
     public void selectTwoPlayer(View view) {
         gameMode = 2;
         //   Create an intent that calls the activity class and pass the gameBoard selected by user

@@ -48,6 +48,7 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
     private String player1Marker;
     private String player2Marker;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -95,6 +96,7 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
                 }
             }
         }
+//         Sets a listener on the reset button
 
         Button resetButton = findViewById(R.id.button_reset);
         resetButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +108,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         changeTurn(player1Turn);
     }
 
+    /**
+     * Watches for button clicks and execute player game
+     */
     @Override
     public void onClick(View view) {
         if (!((Button) view).getText().toString().equals("")) {
@@ -138,6 +143,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         changeTurn(player1Turn);
     }
 
+    /**
+     * Changes the turn of players
+     */
     private void changeTurn(boolean player1Turn) {
         String playerTurn;
         if (player1Turn){
@@ -150,6 +158,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         textViewPlayerTurn.setText(String.valueOf(playerTurn));
     }
 
+    /**
+     * Checks if there is a winner from the latest move
+     */
     private boolean checkForWinner() {
 
         if (board != null && board.equals("3")) {
@@ -223,6 +234,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         }
     }
 
+    /**
+     * Updates the UI if the game has been won by Player one
+     */
     private void player1Wins () {
         player1Points++;
         LayoutInflater inflater = getLayoutInflater();
@@ -245,6 +259,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         resetBoard();
     }
 
+    /**
+     * Updates the UI if the game has been won by Player two
+     */
     private void player2Wins () {
         player2Points++;
         LayoutInflater inflater = getLayoutInflater();
@@ -267,6 +284,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         resetBoard();
     }
 
+    /**
+     * Updates the UI if the game ends in a draw
+     */
     private void draw () {
         LayoutInflater inflater = getLayoutInflater();
         View layout = inflater.inflate(R.layout.my_toast,
@@ -284,11 +304,17 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         resetBoard();
     }
 
+    /**
+     * Updates the UI with the points of each player
+     */
     private void updatePointsText () {
         textViewPlayer1Points.setText(String.valueOf(player1Points));
         textViewPlayer2Points.setText(String.valueOf(player2Points));
     }
 
+    /**
+     * Clears the board for another round of game
+     */
     private void resetBoard () {
         if (board != null && board.equals("3")) {
             for (int i = 0; i < 3; i++) {
@@ -308,6 +334,9 @@ public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClick
         player1Turn = true;
     }
 
+    /**
+     * Clears the board for another round of game and resets the points
+     */
     private void resetGame () {
         player1Points = 0;
         player2Points = 0;
