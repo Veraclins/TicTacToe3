@@ -28,10 +28,6 @@ public class Select5x5Board extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select5x5_board);
-
-        // Get the Intent that started this activity and extract the string "board"
-        Bundle intent = getIntent().getExtras();
-        String gameBoard = intent != null ? intent.getString("board") : null;
     }
 
     public void resetGame(View view) {

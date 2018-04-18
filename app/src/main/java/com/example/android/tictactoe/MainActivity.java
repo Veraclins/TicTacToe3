@@ -23,7 +23,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    int gameMode = 0;
+    private int gameMode = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

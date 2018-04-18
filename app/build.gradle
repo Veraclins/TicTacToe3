@@ -5,6 +5,7 @@ android {
     defaultConfig {
         applicationId "com.example.android.tictactoe"
         minSdkVersion 19
+        //noinspection OldTargetApi
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"

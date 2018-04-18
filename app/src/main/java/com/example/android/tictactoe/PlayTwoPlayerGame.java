@@ -30,8 +30,8 @@ import android.widget.Toast;
 
 public class PlayTwoPlayerGame extends AppCompatActivity implements View.OnClickListener {
 
-    private Button[][] buttons = new Button [3][3];
-    private Button[][] buttons_5 = new Button [5][5];
+    private final Button[][] buttons = new Button [3][3];
+    private final Button[][] buttons_5 = new Button [5][5];
 
     private boolean player1Turn = true;
 

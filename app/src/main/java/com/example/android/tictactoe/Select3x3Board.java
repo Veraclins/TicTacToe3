@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 
 public class Select3x3Board extends AppCompatActivity {
-    private String gameBoard;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +13,7 @@ public class Select3x3Board extends AppCompatActivity {
 
         // Get the Intent that started this activity and extract the string
         Bundle intent = getIntent().getExtras();
-        gameBoard = intent != null ? intent.getString("board") : null;
+        String gameBoard = intent != null ? intent.getString("board") : null;
     }
 
 

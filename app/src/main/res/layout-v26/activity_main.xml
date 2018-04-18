@@ -4,179 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#330000"
     tools:context="com.example.android.tictactoe.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_game_mode"
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        android:textSize="32sp"
+        android:textColor="@color/white"
+        android:layout_marginTop="24dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
-            android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/single_player"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true">
-            <TextView
-                android:id="@+id/text_p1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/player_1"
-                android:textStyle="bold"
-                android:textSize="30sp"/>
-
-            <TextView
-                android:id="@+id/text_score1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/score1"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="40sp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/single_player"
+            android:textSize="36sp"
+            android:onClick="selectSinglePlayer"
+            android:background="#66ffff"
+            android:textColor="#003300"
+            android:padding="10dp"
+            android:layout_centerHorizontal="true"/>
+        <Button
+            android:id="@+id/two_player"
+            android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            tools:ignore="RelativeOverlap">
-            <TextView
-                android:id="@+id/text_score2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/score2"
-                android:textStyle="bold"
-                android:textColor="@color/colorPrimary"
-                android:textSize="40sp"/>
-
-            <TextView
-                android:id="@+id/text_p2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="16dp"
-                android:text="@string/player_2"
-                android:textStyle="bold"
-                android:textSize="30sp"/>
-        </LinearLayout>
-
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="@string/two_player"
+            android:textSize="36sp"
+            android:onClick="selectTwoPlayer"
+            android:background="#66ffff"
+            android:textColor="#003300"
+            android:padding="10dp"
+            android:layout_below="@id/single_player"
+            android:layout_centerHorizontal="true"/>
     </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp">
-
-        <Button
-            android:id="@+id/button_00"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/button_01"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-        <Button
-            android:id="@+id/button_02"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp">
-
-        <Button
-            android:id="@+id/button_10"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/button_11"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-        <Button
-            android:id="@+id/button_12"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_marginHorizontal="16dp">
-
-        <Button
-            android:id="@+id/button_20"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/button_21"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-        <Button
-            android:id="@+id/button_22"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:textSize="60sp"
-            tools:ignore="ButtonStyle" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp">
-        <Button
-            android:id="@+id/button_change_board"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_weight="1"
-            android:text="@string/change_board"
-            tools:ignore="ButtonStyle" />
-
-        <Button
-            android:id="@+id/button_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorSuccess"
-            android:layout_weight="1"
-            style=""
-            android:text="@string/reset_game"/>
-        <Button
-            android:id="@+id/button_select"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_weight="1"
-            android:text="@string/change_mode"
-            tools:ignore="ButtonStyle" />
-    </LinearLayout>
 
 </LinearLayout>

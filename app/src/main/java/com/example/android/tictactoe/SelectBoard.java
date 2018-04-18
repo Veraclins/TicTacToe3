@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 public class SelectBoard extends AppCompatActivity {
     private int gameBoard;
@@ -63,7 +62,7 @@ public class SelectBoard extends AppCompatActivity {
         }
     }
 
-    protected void startSinglePlayerGame (int board, String marker){
+    private void startSinglePlayerGame(int board, String marker){
         gameBoard = board;
         playerMarker = marker;
         //   Create an intent that calls the activity class and pass the gameBoard selected by user
@@ -75,7 +74,7 @@ public class SelectBoard extends AppCompatActivity {
         }
     }
 
-    protected void startTwoPlayerGame (int board, String marker){
+    private void startTwoPlayerGame(int board, String marker){
         gameBoard = board;
         playerMarker = marker;
         //   Create an intent that calls the activity class and pass the gameBoard selected by user

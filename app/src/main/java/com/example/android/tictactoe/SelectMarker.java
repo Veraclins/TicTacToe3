@@ -21,7 +21,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Toast;
 
 public class SelectMarker extends AppCompatActivity {
     private String gameMode;
@@ -39,8 +38,10 @@ public class SelectMarker extends AppCompatActivity {
 
 
     }
-
-    protected void selectBoard (String mode, String marker){
+    /**
+     * Creates Intent for either of the two modes and pass the marker selected
+     */
+    private void selectBoard(String mode, String marker){
 //        Single Player game is only available for the 3 x 3 board hence no need for choosing board in this mode
         if (Integer.parseInt(gameMode) == 1){
             startSinglePlayerGame();
@@ -55,18 +56,26 @@ public class SelectMarker extends AppCompatActivity {
         }
     }
 
-
+    /**
+     * Sets "X" as the marker for human player in Single Player mode or Player One in Two Player mode
+     */
     public void selectX(View view) {
         playerMarker = "X";
         selectBoard(gameMode, playerMarker);
     }
 
+    /**
+     * Sets "O" as the marker for human player in Single Player mode or Player One in Two Player mode
+     */
     public void selectO(View view) {
         playerMarker = "O";
         selectBoard(gameMode, playerMarker);
     }
 
-    protected void startSinglePlayerGame (){
+    /**
+     * Creates intent to the PlaySinglePlayerGame class with the selected marker
+     */
+    private void startSinglePlayerGame(){
         //   Create an intent that calls the activity class and pass the gameBoard selected by user
         Intent intent = new Intent(this, PlaySinglePlayerGame.class);
         intent.putExtra("marker", String.valueOf(playerMarker));

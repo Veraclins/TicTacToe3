@@ -3,9 +3,7 @@
     <string name="score1">0</string>
     <string name="score2">0</string>
     <string name="player_2">Player 2</string>
-    <string name="change_board">Change Board</string>
     <string name="reset_game">Reset Game</string>
-    <string name="change_mode">Change Mode</string>
     <string name="player_1">Player 1</string>
     <string name="select_game_mode">Select Game Mode</string>
     <string name="two_player">Two Players</string>
