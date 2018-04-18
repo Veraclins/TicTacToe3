@@ -14,8 +14,6 @@
     <string name="_3_x_3_board">3 X 3 Board</string>
     <string name="_5_x_5_board">5 X 5 Board</string>
     <string name="player_turn">Player 1 Turn</string>
-    <string name="computer_win_text">Computer wins this round! Try again!</string>
-    <string name="human_win_text">Good job!   You win this round!   Let\'s go again!!</string>
     <string name="select_o">O</string>
     <string name="select_x">X</string>
     <string name="select_marker">Select Marker</string>

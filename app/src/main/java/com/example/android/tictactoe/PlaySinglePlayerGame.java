@@ -107,9 +107,7 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
 
             ((Button) view).setText(playerMarker);
             ((Button) view).setTextColor(Color.GREEN);
-
         }
-
         finishMove();
     }
     /**
@@ -444,14 +442,11 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
     private void changeTurn() {
         String playerMove;
         if (playerTurn){
-            playerMove = "Player 1 to Move";
+            playerMove = "Your Move pal";
             textViewPlayerTurn.setTextColor(Color.GREEN);
             textViewPlayerTurn.setText(String.valueOf(playerMove));
         } else {
-            playerMove = "Computer Move. please wait...";
-            textViewPlayerTurn.setTextColor(Color.RED);
-            textViewPlayerTurn.setText(String.valueOf(playerMove));
-            SystemClock.sleep(1000);
+            SystemClock.sleep(300);
             compMove();
         }
 
@@ -538,7 +533,7 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
                 (ViewGroup) findViewById(R.id.custom_toast_container));
 
         TextView text = layout.findViewById(R.id.text);
-        text.setText("Good job Player 1 \n You are the Winner");
+        text.setText("Good job Champ \n Let's go again!");
         text.setTextColor(Color.GREEN);
 
         ImageView image = layout.findViewById(R.id.toast_image);
@@ -560,11 +555,8 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
                 (ViewGroup) findViewById(R.id.custom_toast_container));
 
         TextView text = layout.findViewById(R.id.text);
-        text.setText("Good job Computer \n You are the Winner");
-        text.setTextColor(Color.GREEN);
-
-        ImageView image = layout.findViewById(R.id.toast_image);
-        image.setImageResource(R.drawable.thumb);
+        text.setText("You lose pal! \n Try Again");
+        text.setTextColor(Color.RED);
 
         Toast toast = new Toast(getApplicationContext());
         toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
@@ -581,7 +573,7 @@ public class PlaySinglePlayerGame extends AppCompatActivity implements View.OnCl
                 (ViewGroup) findViewById(R.id.custom_toast_container));
 
         TextView text = layout.findViewById(R.id.text);
-        text.setText("It's a draw \n No one could get the better of the other!");
+        text.setText("It's a draw \n Not bad but you can win this!");
         text.setTextColor(Color.YELLOW);
 
         Toast toast = new Toast(getApplicationContext());
